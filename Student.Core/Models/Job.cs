@@ -22,9 +22,8 @@ namespace Student.Core.Models
         public string JobPosition { get; set; }
 
         [DisplayName("Salary Offered")]
-        [StringLength(30)]
         [Required]
-        public string SalaryOffered { get; set; }
+        public decimal SalaryOffered { get; set; }
 
         [DisplayName("Business Name")]
         [StringLength(30)]

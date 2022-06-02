@@ -52,33 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202205241351232_first.cs" />
-    <Compile Include="Migrations\202205241351232_first.designer.cs">
-      <DependentUpon>202205241351232_first.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205261535021_UpdateDeviceModel.cs" />
-    <Compile Include="Migrations\202205261535021_UpdateDeviceModel.designer.cs">
-      <DependentUpon>202205261535021_UpdateDeviceModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205261626311_EditDeviceDataTypes.cs" />
-    <Compile Include="Migrations\202205261626311_EditDeviceDataTypes.designer.cs">
-      <DependentUpon>202205261626311_EditDeviceDataTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205261737433_ImagesProp.cs" />
-    <Compile Include="Migrations\202205261737433_ImagesProp.designer.cs">
-      <DependentUpon>202205261737433_ImagesProp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205300855162_AddedModel.cs" />
-    <Compile Include="Migrations\202205300855162_AddedModel.designer.cs">
-      <DependentUpon>202205300855162_AddedModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205301545281_SalaryOffered.cs" />
-    <Compile Include="Migrations\202205301545281_SalaryOffered.designer.cs">
-      <DependentUpon>202205301545281_SalaryOffered.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205301837442_JobModel.cs" />
-    <Compile Include="Migrations\202205301837442_JobModel.designer.cs">
-      <DependentUpon>202205301837442_JobModel.cs</DependentUpon>
+    <Compile Include="Migrations\202206021029588_FirstMigration.cs" />
+    <Compile Include="Migrations\202206021029588_FirstMigration.designer.cs">
+      <DependentUpon>202206021029588_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,26 +71,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202205241351232_first.resx">
-      <DependentUpon>202205241351232_first.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205261535021_UpdateDeviceModel.resx">
-      <DependentUpon>202205261535021_UpdateDeviceModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205261626311_EditDeviceDataTypes.resx">
-      <DependentUpon>202205261626311_EditDeviceDataTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205261737433_ImagesProp.resx">
-      <DependentUpon>202205261737433_ImagesProp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205300855162_AddedModel.resx">
-      <DependentUpon>202205300855162_AddedModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205301545281_SalaryOffered.resx">
-      <DependentUpon>202205301545281_SalaryOffered.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205301837442_JobModel.resx">
-      <DependentUpon>202205301837442_JobModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206021029588_FirstMigration.resx">
+      <DependentUpon>202206021029588_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

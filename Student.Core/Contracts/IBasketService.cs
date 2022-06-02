@@ -10,11 +10,13 @@ namespace Student.Core.Contracts
 {
     public interface IBasketService
     {
-        void AddToBasket(HttpContextBase httpContext, string bookId);
-        void RemoveFromBasket(HttpContextBase httpContext, string itemId);
-        List<BasketItemViewModel> GetBasketItems(HttpContextBase httpContext);
-        BasketSummaryViewModel GetBasketSummary(HttpContextBase httpContext);
-        decimal BasketTotal(HttpContextBase httpContext);
-        void ClearBasket(HttpContextBase httpContext);
+        
+            void AddToBasket(HttpContextBase httpContext, string bookId);
+            void RemoveFromBasket(HttpContextBase httpContext, string itemId);
+            List<BasketItemViewModel> GetBasketItems(HttpContextBase httpContext);
+            BasketSummaryViewModel GetBasketSummary(HttpContextBase httpContext);
+            decimal BasketTotal(HttpContextBase httpContext);
+            void ClearBasket(HttpContextBase httpContext);
+        
     }
 }

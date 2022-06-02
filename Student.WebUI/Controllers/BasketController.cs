@@ -18,19 +18,12 @@ namespace Student.WebUI.Controllers
         IRepository<Customer> customers;
         IBasketService basketService;
         IOrderService orderService;
-        private IRepository<Device> deviceContext;
 
         public BasketController(IBasketService BasketService, IOrderService OrderService, IRepository<Customer> Customers)
         {
             this.basketService = BasketService;
             this.orderService = OrderService;
             this.customers = Customers;
-        }
-
-        public BasketController(IRepository<Device> deviceContext)
-        {
-            this.deviceContext = deviceContext;
-
         }
 
         // GET: Basket
@@ -45,7 +38,7 @@ namespace Student.WebUI.Controllers
         {
             basketService.AddToBasket(this.HttpContext, Id);
 
-            return RedirectToAction("DisplayMeters", "MeterManager");
+            return RedirectToAction("BrowseDevices", "DeviceManager");
         }
         public ActionResult RemoveFromBasket(string Id)
         {
@@ -106,7 +99,7 @@ namespace Student.WebUI.Controllers
 
 
             string receiver = customer.Email;
-            string subject = "E-Library Order Confirmation  ";
+            string subject = "Student Hub Confirmation  ";
             string message = "Hi " + fname + " We have received your order and are processing it. See you soon!";
 
             try

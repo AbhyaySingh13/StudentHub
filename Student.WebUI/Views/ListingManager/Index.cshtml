@@ -10,7 +10,7 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
+    <tr class="warning">
         <th>
            
         </th>
@@ -52,6 +52,7 @@
 
 @foreach (var item in Model) {
 <tr>
+
     <td>
         <img class="img-thumbnail" style="height:150px;width:1000px" src="~/Content/ListingImages/@item.Image" />
     </td>

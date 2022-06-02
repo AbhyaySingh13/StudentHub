@@ -22,9 +22,8 @@ namespace Student.Core.Models
         public string Address { get; set; }
 
        
-        [StringLength(30)]
         [Required]
-        public string Price { get; set; }
+        public decimal Price { get; set; }
         public string Image { get; set; }
 
         
@@ -32,19 +31,19 @@ namespace Student.Core.Models
         [Required]
         public string Description { get; set; }
 
-        [DisplayName("Number of Bedrooms")]
+        [DisplayName("Bedrooms")]
         [Required]
         public int NumBedrooms { get; set; }
 
-        [DisplayName("Number of Bathrooms")]
+        [DisplayName("Bathrooms")]
         [Required]
         public int NumBathrooms { get; set; }
 
-        [DisplayName("Number of Garages")]
+        [DisplayName("Garages")]
         [Required]
         public int NumGarages { get; set; }
 
-        [DisplayName("University Name")]
+        [DisplayName("University")]
         [StringLength(30)]
         [Required]
         public string University { get; set; }

@@ -18,6 +18,7 @@ namespace Student.DataAccess.SQL
         public DbSet<Device> Devices { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Job> Jobs { get; set; }

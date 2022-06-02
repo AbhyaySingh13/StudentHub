@@ -14,11 +14,9 @@ namespace Student.Core.Models
         [StringLength(50)]
         [Required]
         public string Name { get; set; }
-
-        [DisplayName("Price")]
-        [StringLength(30)]
+     
         [Required]
-        public String Price { get; set; }
+        public decimal Price { get; set; }
         public string Image { get; set; }
 
         [DisplayName("Memory")]

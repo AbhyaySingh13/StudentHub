@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class first : DbMigration
+    public partial class FirstMigration : DbMigration
     {
         public override void Up()
         {
@@ -15,16 +15,7 @@
                         StudentName = c.String(nullable: false, maxLength: 30),
                         PropertyId = c.String(),
                         DateTime = c.DateTime(nullable: false),
-                        Address = c.String(maxLength: 30),
-                        CreatedAt = c.DateTime(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.Baskets",
-                c => new
-                    {
-                        Id = c.String(nullable: false, maxLength: 128),
+                        Address = c.String(nullable: false, maxLength: 30),
                         CreatedAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
@@ -36,6 +27,8 @@
                         Id = c.String(nullable: false, maxLength: 128),
                         BasketId = c.String(maxLength: 128),
                         DeviceId = c.String(),
+                        DeviceName = c.String(),
+                        Price = c.String(),
                         Quantity = c.Int(nullable: false),
                         CreatedAt = c.DateTime(nullable: false),
                     })
@@ -44,15 +37,24 @@
                 .Index(t => t.BasketId);
             
             CreateTable(
+                "dbo.Baskets",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        CreatedAt = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.Customers",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        FirstName = c.String(),
-                        LastName = c.String(),
-                        Email = c.String(),
-                        Street = c.String(),
-                        City = c.String(),
+                        FirstName = c.String(nullable: false, maxLength: 30),
+                        LastName = c.String(nullable: false, maxLength: 30),
+                        Email = c.String(nullable: false),
+                        Street = c.String(nullable: false, maxLength: 30),
+                        City = c.String(nullable: false, maxLength: 10),
                         CreatedAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
@@ -62,18 +64,16 @@
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        DeviceId = c.String(),
+                        Name = c.String(nullable: false, maxLength: 50),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Memory = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        OperatingSystem = c.String(),
-                        ProcessorType = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        HardDrive = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        GraqphicsCard = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Image = c.String(),
+                        Memory = c.String(nullable: false, maxLength: 30),
+                        OperatingSystem = c.String(nullable: false, maxLength: 30),
+                        ProcessorType = c.String(nullable: false, maxLength: 20),
+                        HardDrive = c.String(nullable: false, maxLength: 30),
+                        GraphicsCard = c.String(nullable: false, maxLength: 30),
                         VirusProtect = c.Boolean(nullable: false),
-                        FirstName = c.String(),
-                        LastName = c.String(),
                         YearsOfWarranty = c.Int(nullable: false),
-                        DeliveryRequired = c.Boolean(nullable: false),
                         CreatedAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
@@ -83,10 +83,10 @@
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        DriverName = c.String(),
-                        Email = c.String(),
-                        City = c.String(),
-                        Street = c.String(),
+                        DriverName = c.String(nullable: false, maxLength: 30),
+                        Email = c.String(nullable: false, maxLength: 30),
+                        City = c.String(nullable: false, maxLength: 30),
+                        Street = c.String(nullable: false, maxLength: 30),
                         CreatedAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
@@ -96,15 +96,15 @@
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        FirstName = c.String(),
-                        SecondName = c.String(),
-                        Email = c.String(),
-                        JobPosition = c.String(),
-                        BusinessName = c.String(),
-                        Experience = c.Int(nullable: false),
-                        University = c.String(),
+                        Email = c.String(nullable: false, maxLength: 30),
+                        JobPosition = c.String(nullable: false, maxLength: 30),
+                        SalaryOffered = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        BusinessName = c.String(nullable: false, maxLength: 30),
+                        Image = c.String(),
+                        Experience = c.String(nullable: false, maxLength: 30),
+                        University = c.String(nullable: false, maxLength: 30),
                         Vaccinated = c.Boolean(nullable: false),
-                        ShiftTimes = c.Int(nullable: false),
+                        ShiftTimes = c.String(nullable: false, maxLength: 20),
                         CreatedAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
@@ -114,14 +114,15 @@
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        Area = c.String(),
-                        Address = c.String(),
+                        Area = c.String(nullable: false, maxLength: 50),
+                        Address = c.String(nullable: false, maxLength: 50),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Description = c.String(),
+                        Image = c.String(),
+                        Description = c.String(nullable: false, maxLength: 300),
                         NumBedrooms = c.Int(nullable: false),
                         NumBathrooms = c.Int(nullable: false),
                         NumGarages = c.Int(nullable: false),
-                        University = c.String(),
+                        University = c.String(nullable: false, maxLength: 30),
                         Alarm = c.Boolean(nullable: false),
                         Fencing = c.Boolean(nullable: false),
                         Wifi = c.Boolean(nullable: false),
@@ -134,23 +135,26 @@
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        OrderId = c.String(),
+                        OrderId = c.String(maxLength: 128),
                         DeviceId = c.String(),
+                        DeviceName = c.String(),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Image = c.String(),
                         Quantity = c.Int(nullable: false),
                         CreatedAt = c.DateTime(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Orders", t => t.OrderId)
+                .Index(t => t.OrderId);
             
             CreateTable(
                 "dbo.Orders",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        FirstName = c.String(),
-                        LastName = c.String(),
-                        Email = c.String(),
+                        FirstName = c.String(nullable: false),
+                        LastName = c.String(nullable: false),
+                        Email = c.String(nullable: false),
                         Address = c.String(),
                         Street = c.String(),
                         City = c.String(),
@@ -168,18 +172,19 @@
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        FirstName = c.String(),
-                        LastName = c.String(),
-                        Email = c.String(),
-                        CellNumber = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        University = c.String(),
-                        Faculty = c.String(),
-                        Qualification = c.String(),
+                        FirstName = c.String(nullable: false, maxLength: 30),
+                        LastName = c.String(nullable: false, maxLength: 30),
+                        Email = c.String(nullable: false, maxLength: 30),
+                        CellNumber = c.String(nullable: false, maxLength: 20),
+                        University = c.String(nullable: false, maxLength: 30),
+                        Faculty = c.String(nullable: false, maxLength: 50),
+                        Qualification = c.String(nullable: false, maxLength: 50),
+                        Vaccinated = c.Boolean(nullable: false),
                         NumYears = c.Int(nullable: false),
                         Bursary = c.Boolean(nullable: false),
-                        EmergencyFirstName = c.String(),
-                        Relation = c.String(),
-                        EmergencyCellNum = c.String(),
+                        EmergencyFirstName = c.String(nullable: false, maxLength: 30),
+                        Relation = c.String(nullable: false, maxLength: 30),
+                        EmergencyCellNum = c.String(nullable: false, maxLength: 20),
                         CreatedAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
@@ -188,7 +193,9 @@
         
         public override void Down()
         {
+            DropForeignKey("dbo.OrderItems", "OrderId", "dbo.Orders");
             DropForeignKey("dbo.BasketItems", "BasketId", "dbo.Baskets");
+            DropIndex("dbo.OrderItems", new[] { "OrderId" });
             DropIndex("dbo.BasketItems", new[] { "BasketId" });
             DropTable("dbo.Students");
             DropTable("dbo.Orders");
@@ -198,8 +205,8 @@
             DropTable("dbo.Drivers");
             DropTable("dbo.Devices");
             DropTable("dbo.Customers");
-            DropTable("dbo.BasketItems");
             DropTable("dbo.Baskets");
+            DropTable("dbo.BasketItems");
             DropTable("dbo.Appointments");
         }
     }

@@ -75,17 +75,17 @@ namespace Student.Services
             return basket;
         }
 
-        public void AddToBasket(HttpContextBase httpContext, string bookId)
+        public void AddToBasket(HttpContextBase httpContext, string deviceId)
         {
             Basket basket = GetBasket(httpContext, true);
-            BasketItem item = basket.BasketItems.FirstOrDefault(i => i.DeviceId == bookId);
+            BasketItem item = basket.BasketItems.FirstOrDefault(i => i.DeviceId == deviceId);
 
             if (item == null)
             {
                 item = new BasketItem()
                 {
                     BasketId = basket.Id,
-                    DeviceId = bookId,
+                    DeviceId = deviceId,
                     Quantity = 1
                 };
 
@@ -131,7 +131,7 @@ namespace Student.Services
                                    Quantity = b.Quantity,
                                    DeviceName = p.Name,
                                    Image = p.Image,
-                                   //Price = p.Price
+                                   Price = p.Price
                                }
                               ).ToList();
 
@@ -152,12 +152,12 @@ namespace Student.Services
                 int? basketCount = (from item in basket.BasketItems
                                     select item.Quantity).Sum();
 
-                //decimal? basketTotal = (from item in basket.BasketItems
-                //                        join p in deviceContext.Collection() on item.DeviceId equals p.Id
-                //                        select item.Quantity * p.Price).Sum();
+                decimal? basketTotal = (from item in basket.BasketItems
+                                        join p in deviceContext.Collection() on item.DeviceId equals p.Id
+                                        select item.Quantity * p.Price).Sum();
 
                 model.BasketCount = basketCount ?? 0; //Assigns values to model. If its null (??) then it assigns the value to null/0.0
-                //model.BasketTotal = basketTotal ?? decimal.Zero;
+                model.BasketTotal = basketTotal ?? decimal.Zero;
 
                 return model;
             }

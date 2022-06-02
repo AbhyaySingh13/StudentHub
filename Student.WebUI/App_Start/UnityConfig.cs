@@ -45,11 +45,10 @@ namespace Student.WebUI
             // container.LoadConfiguration();
 
             // TODO: Register your type's mappings here.
-            // container.RegisterType<IProductRepository, ProductRepository>();
+            //container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IRepository<Appointment>, SQLRepository<Appointment>>();
             container.RegisterType<IRepository<Job>, SQLRepository<Job>>();
             container.RegisterType<IRepository<Device>, SQLRepository<Device>>();
-            container.RegisterType<IRepository<Customer>, SQLRepository<Customer>>();
             container.RegisterType<IRepository<Basket>, SQLRepository<Basket>>();
             container.RegisterType<IRepository<BasketItem>, SQLRepository<BasketItem>>();
             container.RegisterType<IRepository<Customer>, SQLRepository<Customer>>();
@@ -57,9 +56,10 @@ namespace Student.WebUI
             container.RegisterType<IRepository<Listing>, SQLRepository<Listing>>();
             container.RegisterType<IRepository<Driver>, SQLRepository<Driver>>();
             container.RegisterType<IRepository<Students>, SQLRepository<Students>>();
-
             container.RegisterType<IBasketService, BasketService>();
-            //container.RegisterType<IOrderService, OrderService>();
+            container.RegisterType<IOrderService, OrderService>();
+
+
         }
     }
 }

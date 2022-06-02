@@ -95,9 +95,6 @@ namespace Student.WebUI.Models
         [Required]
         public string City { get; set; }
 
-        [Required]
-        [DisplayName("Zip Code")]
-        public string ZipCode { get; set; }
     }
 
 
