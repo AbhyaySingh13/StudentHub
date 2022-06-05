@@ -24,13 +24,19 @@ namespace Student.Core.Models
         public string LastName { get; set; }
         [Required]
         public string Email { get; set; }
-        public string Address { get; set; }
         public string Street { get; set; }
         public string City { get; set; }
+
         [DisplayName("Order Status")]
         public string OrderStatus { get; set; }
-        public string DeliverMethod { get; set; }
+
+        [DisplayName("Delivery Method")]
+        public string DeliveryMethod { get; set; }
+
+        [DisplayName("Basket Total")]
         public decimal BasketTotal { get; set; }
+
+        [DisplayName("Final Total")]
         public decimal FinalTotal { get; set; }
         public string Driver { get; set; }
         public IEnumerable<Driver> Drivers { get; set; }

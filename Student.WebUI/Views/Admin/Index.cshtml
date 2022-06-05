@@ -28,7 +28,8 @@
             <div class="list-group">
                 @Html.ActionLink("Manage Jobs", "Index", "JobManager", null, new { @class = "list-group-item" })
                 @Html.ActionLink("Add Jobs", "Create", "JobManager", null, new { @class = "list-group-item" })
-                @Html.ActionLink("View CVs", "Index", "JobManager", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Manage Applications", "Index", "ApplicationManager", null, new { @class = "list-group-item" })
+                @*@Html.ActionLink("View CVs", "Index", "JobManager", null, new { @class = "list-group-item" })*@
             </div>
         </div>
     </div>
@@ -44,7 +45,7 @@
                 @Html.ActionLink("Manage Devices", "Index", "DeviceManager", null, new { @class = "list-group-item" })
                 @Html.ActionLink("Add Devices", "Create", "DeviceManager", null, new { @class = "list-group-item" })
                 @Html.ActionLink("Current Orders", "Index", "OrderManager", null, new { @class = "list-group-item" })
-                @Html.ActionLink("Order History", "Index", "OrderManager", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Order History", "OrderHistory", "OrderManager", null, new { @class = "list-group-item" })
                 @Html.ActionLink("Manage Drivers", "Index", "DriverManager", null, new { @class = "list-group-item" })
                 @Html.ActionLink("Driver Deliveries", "Index", "OrderManager", null, new { @class = "list-group-item" })
             </div>

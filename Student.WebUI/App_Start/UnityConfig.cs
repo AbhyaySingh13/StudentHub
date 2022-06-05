@@ -47,6 +47,7 @@ namespace Student.WebUI
             // TODO: Register your type's mappings here.
             //container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IRepository<Appointment>, SQLRepository<Appointment>>();
+            container.RegisterType<IRepository<Application>, SQLRepository<Application>>();
             container.RegisterType<IRepository<Job>, SQLRepository<Job>>();
             container.RegisterType<IRepository<Device>, SQLRepository<Device>>();
             container.RegisterType<IRepository<Basket>, SQLRepository<Basket>>();

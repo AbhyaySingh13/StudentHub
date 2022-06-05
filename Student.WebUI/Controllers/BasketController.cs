@@ -55,7 +55,7 @@ namespace Student.WebUI.Controllers
         }
 
         [Authorize]
-        public ActionResult Checkout()
+        public ActionResult Checkout(decimal basketTotal)
         {
             Customer customer = customers.Collection().FirstOrDefault(c => c.Email == User.Identity.Name);
             if (customer != null)
@@ -66,8 +66,8 @@ namespace Student.WebUI.Controllers
                     LastName = customer.LastName,
                     Email = customer.Email,
                     Street = customer.Street,
-                    City = customer.City
-
+                    City = customer.City,
+                    FinalTotal = basketTotal
                 };
                 return View(order);
             }
@@ -85,13 +85,33 @@ namespace Student.WebUI.Controllers
             order.OrderStatus = "Order Created";
             order.Email = User.Identity.Name;
 
-            //process Payment
+            //Null Properties
+            order.BasketTotal = order.FinalTotal;
+            order.Driver = "Not Assigned";
+
+
+            //Process Payment
             order.OrderStatus = "Payment Processed";
             orderService.CreateOrder(order, basketItems);
             basketService.ClearBasket(this.HttpContext);
 
-            return RedirectToAction("ThankYou", new { OrderId = order.Id });
+            return RedirectToAction("Payment", new { FinalTotal = order.FinalTotal });
+            //return RedirectToAction("ThankYou", new { OrderId = order.Id });
         }
+
+
+        public ActionResult Payment(decimal FinalTotal)
+        {
+            string url = "";
+            decimal fTotal = FinalTotal;
+
+            fTotal = Decimal.Ceiling(fTotal);
+            url = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&amount=" + (fTotal) + "&business=campuswork2021@outlook.com&item_name=Devices&return=https://localhost:44350/Basket/ThankYou/"; //localhost
+         // url = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&amount=" + (fTotal) + "&business=campuswork2021@outlook.com&item_name=Devices&return=https://2022grp10.azurewebsites.net/Basket/ThankYou"; //deploy
+
+            return Redirect(url);
+        }
+
         public ActionResult ThankYou()
         {
             Customer customer = customers.Collection().FirstOrDefault(c => c.Email == User.Identity.Name); //Returns the user
@@ -100,13 +120,13 @@ namespace Student.WebUI.Controllers
 
             string receiver = customer.Email;
             string subject = "Student Hub Confirmation  ";
-            string message = "Hi " + fname + " We have received your order and are processing it. See you soon!";
+            string message = "Hi " + fname + " We have succesfully received your order and your delivery will be on it way soon";
 
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var senderEmail = new MailAddress("campuswork2021@outlook.co.za", "LightYear Solutions");
+                    var senderEmail = new MailAddress("campuswork2021@outlook.com", "Student Hub");
                     var receiverEmail = new MailAddress(receiver, "Receiver");
                     var password = "Campuswork";
                     var sub = subject;
@@ -138,7 +158,5 @@ namespace Student.WebUI.Controllers
 
             return View();
         }
-
-
     }
 }

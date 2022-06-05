@@ -40,7 +40,7 @@ namespace Student.Core.Models
         [Required]
         public string Faculty { get; set; }
 
-        [DisplayName("qualification")]
+        [DisplayName("Qualification")]
         [StringLength(50)]
         [Required]
         public string Qualification { get; set; }

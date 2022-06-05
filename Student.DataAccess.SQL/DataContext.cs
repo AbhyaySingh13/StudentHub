@@ -26,7 +26,7 @@ namespace Student.DataAccess.SQL
         public DbSet<Students> Students { get; set; }
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<Listing> Listings { get; set; }
-
+        public DbSet<Application> Applications { get; set; }
 
     }
 }

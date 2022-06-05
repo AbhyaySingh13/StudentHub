@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -189,6 +192,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ApplicationManagerController.cs" />
     <Compile Include="Controllers\AppointmentManagerController.cs" />
     <Compile Include="Controllers\BasketController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
@@ -302,15 +306,27 @@
     <Content Include="Views\Basket\ThankYou.cshtml" />
     <Content Include="Views\Basket\Index.cshtml" />
     <Content Include="Views\Basket\BasketSummary.cshtml" />
+    <Content Include="Views\Basket\Checkout.cshtml" />
+    <Content Include="Views\ApplicationManager\Index.cshtml" />
+    <Content Include="Views\ApplicationManager\Create.cshtml" />
+    <Content Include="Views\ApplicationManager\Edit.cshtml" />
+    <Content Include="Views\ApplicationManager\Delete.cshtml" />
+    <Content Include="Views\OrderManager\Index.cshtml" />
+    <Content Include="Views\OrderManager\OrderHistory.cshtml" />
+    <Content Include="Views\JobManager\ApplyForJob.cshtml" />
+    <Content Include="Views\JobManager\ThankYou.cshtml" />
+    <Content Include="Views\Home\Homepage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\ApplicantImages\" />
+    <Folder Include="Content\ApplicationImages\" />
     <Folder Include="Content\DeviceImages\" />
     <Folder Include="Content\JobImages\" />
     <Folder Include="Content\ListingImages\" />
     <Folder Include="Views\BasketManager\" />
+    <Folder Include="Views\Files\" />
     <Folder Include="Views\OrderItem\" />
-    <Folder Include="Views\OrderManager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
