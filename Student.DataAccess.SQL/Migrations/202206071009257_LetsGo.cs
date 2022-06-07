@@ -3,10 +3,27 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class FirstMigration : DbMigration
+    public partial class LetsGo : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Applications",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        JobId = c.String(),
+                        StudentName = c.String(),
+                        University = c.String(),
+                        Qualification = c.String(),
+                        Email = c.String(),
+                        Cell = c.String(),
+                        CV = c.String(),
+                        Image = c.String(),
+                        CreatedAt = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.Appointments",
                 c => new
@@ -83,10 +100,10 @@
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        DriverName = c.String(nullable: false, maxLength: 30),
-                        Email = c.String(nullable: false, maxLength: 30),
-                        City = c.String(nullable: false, maxLength: 30),
-                        Street = c.String(nullable: false, maxLength: 30),
+                        DriverName = c.String(nullable: false),
+                        Email = c.String(nullable: false),
+                        University = c.Int(nullable: false),
+                        Availability = c.Boolean(nullable: false),
                         CreatedAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
@@ -155,13 +172,13 @@
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
                         Email = c.String(nullable: false),
-                        Address = c.String(),
                         Street = c.String(),
                         City = c.String(),
                         OrderStatus = c.String(),
-                        DeliverMethod = c.String(),
+                        DeliveryMethod = c.String(),
                         BasketTotal = c.Decimal(nullable: false, precision: 18, scale: 2),
                         FinalTotal = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        University = c.Int(nullable: false),
                         Driver = c.String(),
                         CreatedAt = c.DateTime(nullable: false),
                     })
@@ -208,6 +225,7 @@
             DropTable("dbo.Baskets");
             DropTable("dbo.BasketItems");
             DropTable("dbo.Appointments");
+            DropTable("dbo.Applications");
         }
     }
 }

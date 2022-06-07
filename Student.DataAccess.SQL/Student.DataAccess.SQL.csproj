@@ -52,29 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202206021029588_FirstMigration.cs" />
-    <Compile Include="Migrations\202206021029588_FirstMigration.designer.cs">
-      <DependentUpon>202206021029588_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202206071009257_LetsGo.cs" />
+    <Compile Include="Migrations\202206071009257_LetsGo.designer.cs">
+      <DependentUpon>202206071009257_LetsGo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202206021123274_FilesAdded.cs" />
-    <Compile Include="Migrations\202206021123274_FilesAdded.designer.cs">
-      <DependentUpon>202206021123274_FilesAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206021215002_UpdatedOrderModel.cs" />
-    <Compile Include="Migrations\202206021215002_UpdatedOrderModel.designer.cs">
-      <DependentUpon>202206021215002_UpdatedOrderModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206021225515_KeenanOcd.cs" />
-    <Compile Include="Migrations\202206021225515_KeenanOcd.designer.cs">
-      <DependentUpon>202206021225515_KeenanOcd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206021331326_AddedApplications.cs" />
-    <Compile Include="Migrations\202206021331326_AddedApplications.designer.cs">
-      <DependentUpon>202206021331326_AddedApplications.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206021334383_UpdatedApplications.cs" />
-    <Compile Include="Migrations\202206021334383_UpdatedApplications.designer.cs">
-      <DependentUpon>202206021334383_UpdatedApplications.cs</DependentUpon>
+    <Compile Include="Migrations\202206071016191_JobUpdate.cs" />
+    <Compile Include="Migrations\202206071016191_JobUpdate.designer.cs">
+      <DependentUpon>202206071016191_JobUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,23 +75,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206021029588_FirstMigration.resx">
-      <DependentUpon>202206021029588_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206071009257_LetsGo.resx">
+      <DependentUpon>202206071009257_LetsGo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206021123274_FilesAdded.resx">
-      <DependentUpon>202206021123274_FilesAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206021215002_UpdatedOrderModel.resx">
-      <DependentUpon>202206021215002_UpdatedOrderModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206021225515_KeenanOcd.resx">
-      <DependentUpon>202206021225515_KeenanOcd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206021331326_AddedApplications.resx">
-      <DependentUpon>202206021331326_AddedApplications.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206021334383_UpdatedApplications.resx">
-      <DependentUpon>202206021334383_UpdatedApplications.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206071016191_JobUpdate.resx">
+      <DependentUpon>202206071016191_JobUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

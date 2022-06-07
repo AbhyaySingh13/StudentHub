@@ -7,13 +7,13 @@ namespace Student.DataAccess.SQL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class UpdatedOrderModel : IMigrationMetadata
+    public sealed partial class LetsGo : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatedOrderModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(LetsGo));
         
         string IMigrationMetadata.Id
         {
-            get { return "202206021215002_UpdatedOrderModel"; }
+            get { return "202206071009257_LetsGo"; }
         }
         
         string IMigrationMetadata.Source

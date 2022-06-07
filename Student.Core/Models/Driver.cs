@@ -11,23 +11,27 @@ namespace Student.Core.Models
    public class Driver : BaseEntity
     {
         [DisplayName("Driver Name")]
-        [StringLength(30)]
         [Required]
         public string DriverName { get; set; }
 
         [DisplayName("Email")]
-        [StringLength(30)]
         [Required]
         public string Email { get; set; }
+        public UniversityName University { get; set; }
+        public bool Availability { get; set; }
 
-        [DisplayName("City")]
-        [StringLength(30)]
-        [Required]
-        public string City { get; set; }
+        public enum UniversityName
+        {
+            Damelin,
+            DUT,
+            UKZN,
+            Mangosuthu,
+            Regent,
+            Mancosa,
+            Inscape,
+            Zululand
+        }
 
-        [DisplayName("Street Name")]
-        [StringLength(30)]
-        [Required]
-        public string Street { get; set; }
+
     }
 }

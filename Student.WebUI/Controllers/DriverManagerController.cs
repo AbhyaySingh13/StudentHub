@@ -73,9 +73,8 @@ namespace Student.WebUI.Controllers
 
                 driverToEdit.DriverName = driver.DriverName;
                 driverToEdit.Email = driver.Email;
-                driverToEdit.City = driver.City;
-                driverToEdit.Street = driver.Street;
-
+                driverToEdit.University = driver.University;
+                driverToEdit.Availability = driver.Availability;
 
                 context.Commit();
 

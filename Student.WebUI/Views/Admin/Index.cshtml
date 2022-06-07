@@ -47,7 +47,10 @@
                 @Html.ActionLink("Current Orders", "Index", "OrderManager", null, new { @class = "list-group-item" })
                 @Html.ActionLink("Order History", "OrderHistory", "OrderManager", null, new { @class = "list-group-item" })
                 @Html.ActionLink("Manage Drivers", "Index", "DriverManager", null, new { @class = "list-group-item" })
-                @Html.ActionLink("Driver Deliveries", "Index", "OrderManager", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Prepare Orders for Delivery", "PrepareOrdersForDelivery", "OrderManager", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Prepare Orders for Collection", "PrepareOrdersForCollection", "OrderManager", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Driver Deliveries", "DriverDeliveries", "OrderManager", null, new { @class = "list-group-item" })
+                @Html.ActionLink("Order Collections", "OrderCollections", "OrderManager", null, new { @class = "list-group-item" })
             </div>
         </div>
     </div>

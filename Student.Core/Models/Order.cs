@@ -38,6 +38,19 @@ namespace Student.Core.Models
 
         [DisplayName("Final Total")]
         public decimal FinalTotal { get; set; }
+        public UniversityList University { get; set; }
+
+        public enum UniversityList
+        {
+            Damelin,
+            DUT,
+            UKZN,
+            Mangosuthu,
+            Regent,
+            Mancosa,
+            Inscape,
+            Zululand
+        }
         public string Driver { get; set; }
         public IEnumerable<Driver> Drivers { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }

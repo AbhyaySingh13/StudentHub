@@ -87,6 +87,8 @@ namespace Student.WebUI.Controllers
 
             //Null Properties
             order.BasketTotal = order.FinalTotal;
+
+
             order.Driver = "Not Assigned";
 
 
@@ -107,7 +109,7 @@ namespace Student.WebUI.Controllers
 
             fTotal = Decimal.Ceiling(fTotal);
             url = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&amount=" + (fTotal) + "&business=campuswork2021@outlook.com&item_name=Devices&return=https://localhost:44350/Basket/ThankYou/"; //localhost
-         // url = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&amount=" + (fTotal) + "&business=campuswork2021@outlook.com&item_name=Devices&return=https://2022grp10.azurewebsites.net/Basket/ThankYou"; //deploy
+            //url = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&amount=" + (fTotal) + "&business=campuswork2021@outlook.com&item_name=Devices&return=https://2022grp10.azurewebsites.net/Basket/ThankYou"; //deploy
 
             return Redirect(url);
         }

@@ -227,6 +227,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\2022grp10 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -283,9 +284,6 @@
     <Content Include="Views\AppointmentManager\Delete.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
-    <Content Include="Views\DriverManager\Create.cshtml" />
-    <Content Include="Views\DriverManager\Edit.cshtml" />
-    <Content Include="Views\DriverManager\Delete.cshtml" />
     <Content Include="Views\StudentsManager\Create.cshtml" />
     <Content Include="Views\StudentsManager\Edit.cshtml" />
     <Content Include="Views\StudentsManager\Delete.cshtml" />
@@ -296,7 +294,6 @@
     <Content Include="Views\DeviceManager\Delete.cshtml" />
     <Content Include="Views\AppointmentManager\Index.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
-    <Content Include="Views\DriverManager\Index.cshtml" />
     <Content Include="Views\JobManager\Index.cshtml" />
     <Content Include="Views\ListingManager\Index.cshtml" />
     <Content Include="Views\StudentsManager\Index.cshtml" />
@@ -316,6 +313,17 @@
     <Content Include="Views\JobManager\ApplyForJob.cshtml" />
     <Content Include="Views\JobManager\ThankYou.cshtml" />
     <Content Include="Views\Home\Homepage.cshtml" />
+    <Content Include="Views\DriverManager\Index.cshtml" />
+    <Content Include="Views\DriverManager\Create.cshtml" />
+    <Content Include="Views\DriverManager\Edit.cshtml" />
+    <Content Include="Views\DriverManager\Delete.cshtml" />
+    <Content Include="Views\OrderManager\PrepareOrdersForDelivery.cshtml" />
+    <Content Include="Views\OrderManager\PrepareDelivery.cshtml" />
+    <Content Include="Views\OrderManager\OrderItems.cshtml" />
+    <Content Include="Views\OrderManager\DriverDeliveries.cshtml" />
+    <Content Include="Views\OrderManager\PrepareOrdersForCollection.cshtml" />
+    <Content Include="Views\OrderManager\PrepareCollection.cshtml" />
+    <Content Include="Views\OrderManager\OrderCollections.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

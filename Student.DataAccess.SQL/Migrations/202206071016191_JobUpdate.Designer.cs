@@ -7,13 +7,13 @@ namespace Student.DataAccess.SQL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class UpdatedApplications : IMigrationMetadata
+    public sealed partial class JobUpdate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatedApplications));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(JobUpdate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202206021334383_UpdatedApplications"; }
+            get { return "202206071016191_JobUpdate"; }
         }
         
         string IMigrationMetadata.Source

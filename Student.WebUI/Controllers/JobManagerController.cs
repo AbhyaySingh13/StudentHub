@@ -230,49 +230,49 @@ namespace Student.WebUI.Controllers
                 return RedirectToAction("Index");
             }
         }
-        public ActionResult ThankYou()
-        {
-           
+        //public ActionResult ThankYou()
+        //{
 
-            //string subject = "Student Hub Confirmation  ";
-            //string message = "Hi " + fname + " We have received your application and we will be in contact soon!";
 
-            //try
-            //{
-            //    if (ModelState.IsValid)
+            //    string subject = "Student Hub Confirmation  ";
+            //    string message = "Hi " + fname + " We have received your application and we will be in contact soon!";
+
+            //    try
             //    {
-            //        var senderEmail = new MailAddress("campuswork2021@outlook.com", "Student Hub");
-            //        var receiverEmail = new MailAddress(receiver, "Receiver");
-            //        var password = "Campuswork";
-            //        var sub = subject;
-            //        var body = message;
-            //        var smtp = new SmtpClient
+            //        if (ModelState.IsValid)
             //        {
-            //            Host = "smtp-mail.outlook.com",
-            //            Port = 587,
-            //            EnableSsl = true,
-            //            DeliveryMethod = SmtpDeliveryMethod.Network,
-            //            UseDefaultCredentials = false,
-            //            Credentials = new NetworkCredential(senderEmail.Address, password)
-            //        };
-            //        using (var mess = new MailMessage(senderEmail, receiverEmail)
-            //        {
-            //            Subject = subject,
-            //            Body = body
-            //        })
-            //        {
-            //            smtp.Send(mess);
+            //            var senderEmail = new MailAddress("campuswork2021@outlook.com", "Student Hub");
+            //            var receiverEmail = new MailAddress(receiver, "Receiver");
+            //            var password = "Campuswork";
+            //            var sub = subject;
+            //            var body = message;
+            //            var smtp = new SmtpClient
+            //            {
+            //                Host = "smtp-mail.outlook.com",
+            //                Port = 587,
+            //                EnableSsl = true,
+            //                DeliveryMethod = SmtpDeliveryMethod.Network,
+            //                UseDefaultCredentials = false,
+            //                Credentials = new NetworkCredential(senderEmail.Address, password)
+            //            };
+            //            using (var mess = new MailMessage(senderEmail, receiverEmail)
+            //            {
+            //                Subject = subject,
+            //                Body = body
+            //            })
+            //            {
+            //                smtp.Send(mess);
+            //            }
+            //            return View();
             //        }
-            //        return View();
             //    }
-            //}
-            //catch (Exception)
-            //{
-            //    ViewBag.Error = "Some Error";
-            //}
+            //    catch (Exception)
+            //    {
+            //        ViewBag.Error = "Some Error";
+            //    }
 
-            return View();
+            //    return View();
+            //}
         }
-    }
 }
 
